@@ -1,0 +1,71 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class='amountBg'>
+  <block wx:if="{{!hasUserInfo}}">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 登录 </button>
+  </block>
+  <block wx:else>
+    <view class='img' src="{{userInfo.avatarUrl}}"></view>
+    <view class='account'>
+    <view class='nick-name'>
+      {{userInfo.nickName}}
+    </view>
+    <view class='address'>
+      <view >{{userInfo.country}}</view>
+      <view >{{userInfo.province}}</view>
+      <view >{{userInfo.city}}</view>·
+    </view>
+    </view>
+  </block>
+</view>
+
+<!-- 底部列表 -->
+<view class='content'>
+  <!-- 收藏列表 -->
+   <view class='line'></view>
+  <view class='item' bindtap='onCollectClick'>
+    <view class='icon'>
+      <image src='../../images/me/collect.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName'>
+      <view>收藏列表</view>
+    </view>
+    <view class='right'>></view>
+  </view>
+ 
+  <!-- 发布历史 -->
+  <view class='hr'></view>
+  <view class='item' bindtap='onHistoryClick'>
+    <view class='icon'>
+      <image src='../../images/me/history.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName'>
+      <view>发布历史</view>
+    </view>
+    <view class='right'>></view>
+  </view>
+  <!-- 邀请好友 -->
+   <view class='line'></view>
+  <view class='item'>
+    <view class='icon'>
+      <image src='../../images/me/invitation.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName'>
+      <view>邀请好友</view>
+    </view>
+    <view class='right' bindtap='clickInvitivation'>
+      <text class='opr'>一起来玩~</text>></view>
+  </view>
+  <view class='hr'></view>
+  <!-- 产品意见 -->
+  <view class='item'  bindtap='onAdvanceClick'>
+    <view class='icon'>
+      <image src='../../images/me/advice.png' style="width:22px;height:21px;"></image>
+    </view>
+    <view class='itemName'>
+      <view>产品意见</view>
+    </view>
+    <view class='right'>></view>
+  </view>
+  <view class='hr'></view>
+
+</view>
